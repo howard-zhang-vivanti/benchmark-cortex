@@ -1,2 +1,8 @@
 streamlit
 openai
+langchain
+langchain-community
+snowflake-sqlalchemy
+snowflake-snowpark-python
+snowflake-connector-python
+
