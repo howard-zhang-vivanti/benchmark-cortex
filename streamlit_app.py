@@ -238,10 +238,11 @@ def create_initial_prompt(file_name):
         # OBJECTIVE # 
         - Each slide is indicated by '<Slide Number>' tag
         - Read and understand the entire document between <doc> </doc> tags 
-        - User will ask questions about the document, respond the questions in json format and include the following
+        - User will ask questions about the document perform the following steps: 
             -- Convert user's question into a more refined and strucured question 
-            -- Provide the answer to user in the user
-            -- The most related slide numbers most related to user's question in a signle number
+            -- Create answer base on the refind question 
+            -- Refine your answer 3 times 
+            -- Provide the answer
 
         ############# 
         # STYLE # 
@@ -257,7 +258,7 @@ def create_initial_prompt(file_name):
 
         ############# 
         # RESPONSE # 
-        Display in rendered markdown style 
+        Rendered markdown style 
         
         ############# 
         the report you need to analysis is: 
