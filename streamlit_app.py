@@ -160,7 +160,7 @@ def display_response_rag (question, model):
 def get_similar_chunks_rag(myquestion):
   
     # take the quesiton and convert it to embedding then find the ANN
-    cmd = """
+    sql = """
          with results as
          (SELECT RELATIVE_PATH,
            VECTOR_COSINE_SIMILARITY(benchmark_reporting.benchmark_cortex.DOCS_CHUNKS_TABLE.chunk_vec,
@@ -173,7 +173,7 @@ def get_similar_chunks_rag(myquestion):
          """
         
     # run the sql, pass the parameters in 
-    df_context = sf_session.sql(cmd, params=[myquestion, num_chunks]).to_pandas()      
+    df_context = sf_session.sql(sql, params=[myquestion, num_chunks]).to_pandas()      
     context_lenght = len(df_context) -1
 
     prompt_context = ""
